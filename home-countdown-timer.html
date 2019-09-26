@@ -1,0 +1,67 @@
+<!--Template Name: T-DesignFest
+File Name: home-countdown-timer.html
+Author Name: ThemeVault
+Author URI: http://www.themevault.net/
+License URI: http://www.themevault.net/license/-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>T-DesignFest - Multipurpose Responsive One/Multi page Template</title>
+        <meta name="description" content="T-DesignFest - A premium template from ThemeVault">
+        <meta name="keywords" content="">
+        <meta name="author" content="ThemeVault">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <link rel="icon" href="images/favicon.png">
+        <!--fonts-->
+        <link href="fonts/et-line-font/style.css" rel="stylesheet">
+        <link href="fonts/elegant_font/css/style.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/counter.js" type="text/javascript"></script>
+    </head>
+    <body class="tv-fixed-img" style="background-image: url('images/comingsoon.jpg')">
+
+        <div class="tv-opacity-light tv-black"></div>
+        <div id="page" class="tv-height-full tv-position-relative" style="height: 670px">
+            <div class="home-cmg--content">
+                <div class="home-cmg-text">
+                    <div class="tv-coming-soon-wrap">
+
+                        <div class="logo tv-position-relative">
+                            <a href="home.html"><img src="images/logo-light.png" class="img-responsive" alt="logo"></a>
+                        </div>
+                        <div data-enddate="2018/12/01 12:30:00" class="countdown text-center text-white counter-box-5  tv-alt-font-Condiment tv-offspace-tb-10">
+                            <div class="counter-container"></div>
+                        </div>
+                        <p class="tv-alt-text tv-white-text text-uppercase tv-font-24 tv-font-weight-600 tv-offspace-top-10per">We're getting ready to launch</p>
+                        <div class="tv-separator-line2 tv-bg-red center-col tv-offspace-top-15"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            $(window).resize(function () {
+                $(".tv-height-full").height($(window).height());
+                $(".tv-height-parent").each(function () {
+                    $(this).height($(this).parent().first().height());
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('.countdown').countdown($('.countdown').attr("data-enddate")).on('update.countdown', function (event) {
+                    $(this).html(event.strftime('' + '<div class="counter-container"><div class="counter-box first"><div class="number">%-D</div><span>Day%!d</span></div>' + '<div class="counter-box"><div class="number">%H</div><span>Hours</span></div>' + '<div class="counter-box"><div class="number">%M</div><span>Minutes</span></div>' + '<div class="counter-box last"><div class="number">%S</div><span>Seconds</span></div></div>'));
+                });
+            });
+        </script>
+    </body>
+</html>
